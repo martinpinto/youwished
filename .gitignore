@@ -1,0 +1,9 @@
+.DS_Store
+*.xpi
+*.sw*
+*.mo
+node_modules
+.idea
+.settings
+npm-debug.log
+.vscode

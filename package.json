@@ -1,0 +1,48 @@
+{
+  "name": "YouWished",
+  "version": "0.0.2",
+  "description": "A minimal stack configuration with AngularJS, CouchDB, ElasticSearch and ExpressJS",
+  "author": "Martin Pinto-Bazurco",
+  "license": "Apache-2.0",
+  "scripts": {
+    "install": "npm install -g rimraf && npm install -g karma && npm install -g nodemon",
+    "start": "node ./bin/start",
+    "serve": "nodemon ./bin/start",
+    "clean": "rimraf node_modules",
+    "restart": "rimraf node_modules",
+    "test": "karma start --single-run --path--"
+  },
+  "dependencies": {
+    "acquire": "git://github.com/njpatel/acquire.git",
+    "body-parser": "~1.10.2",
+    "compression": "^1.4.3",
+    "concat-stream": "^1.5.1",
+    "cookie-parser": "~1.3.3",
+    "debug": "~2.1.1",
+    "express": "~4.11.1",
+    "nano": "^6.2.0",
+    "serve-favicon": "~2.2.0",
+    "sugar": "x.x.x",
+    "toml": "^2.3.0",
+    "toml-require": "^1.1.0",
+    "winston": "^2.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:martinpinto/skeleton.git"
+  },
+  "engines": {
+    "node": "x.x.x",
+    "npm": "x.x.x"
+  },
+  "devDependencies": {
+    "assert": "x.x.x",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-firefox-launcher": "^0.1.7",
+    "karma-jasmine": "^0.3.7",
+    "mocha": "x.x.x",
+    "rimraf": "^2.5.2"
+  }
+}
