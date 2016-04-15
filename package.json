@@ -5,11 +5,11 @@
   "author": "Martin Pinto-Bazurco",
   "license": "Apache-2.0",
   "scripts": {
-    "install": "npm install -g rimraf && npm install -g karma && npm install -g nodemon",
-    "start": "node ./bin/start",
-    "serve": "nodemon ./bin/start",
+    "install": "npm install -g rimraf && npm install -g karma && npm install -g nodemon && npm install -g less",
+    "start": "npm restart && node ./bin/start",
+    "serve": "npm restart && nodemon ./bin/start",
     "clean": "rimraf node_modules",
-    "restart": "rimraf node_modules",
+    "restart": "lessc src/public/assets/stylesheets/style.less src/public/assets/stylesheets/style.css",
     "test": "karma start --single-run --path--"
   },
   "dependencies": {
@@ -43,6 +43,7 @@
     "karma-firefox-launcher": "^0.1.7",
     "karma-jasmine": "^0.3.7",
     "mocha": "x.x.x",
-    "rimraf": "^2.5.2"
+    "rimraf": "^2.5.2",
+    "uglify-js": "^2.4.8"
   }
 }
