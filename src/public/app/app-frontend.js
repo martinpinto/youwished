@@ -1,11 +1,11 @@
 // MAIN MODULE
-var weatherApp = angular.module('weatherApp', ['ngRoute', 'ngResource']);
+var weatherApp = angular.module('youwishedApp', ['ngRoute', 'ngResource']);
 
 // ROUTES
 weatherApp.config(function($routeProvider) {
     $routeProvider
         .when('/', {
-            templateUrl: 'html/home.htm',
+            templateUrl: 'app/components/home/home.htm',
             controller: 'homeController'
         })
         .when('/forecast', {

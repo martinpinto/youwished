@@ -42,19 +42,31 @@ router.get(WISH_PATH + 'all', function (req, res) {
     res.header('Access-Control-Allow-Origin', localhost);
     
     var db = couchdb.db.use(wishesDB);
-    db.get('_all_docs', function (error, body, headers) {
+    db.list({ 'include_docs': true }, function (error, body) {
         var results = [];
+        console.log(body);
         if (body !== 'undefined') {
-            for (var i = 0; i < body.length; i++) {
-                var id = body[i].id;
-                db.get(id, function (error, body, headers) {
-                    results.push(wishModel.createWishFromBody(body));
-                });
+            for (var i = 0; i < body.total_rows; i++) {
+                var row = body.rows[i];
+                var id = row.id;
+                console.log(row);
+                results.push(wishModel.createWishFromBody(row.doc));
             }
         }
         res.status(200).send(results);
     });
 });
+
+/* Sample Code
+var db       = require('nano')('http://localhost:5984/my_db')
+  , per_page = 10
+  , params   = {include_docs: true, limit: per_page, descending: true}
+  ;
+
+db.list(params, function(error,body,headers) {
+  console.log(body);
+});
+*/
 
 // get wish by id
 router.get(WISH_PATH + ':id', function (req, res) {
