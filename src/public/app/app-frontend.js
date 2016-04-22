@@ -9,11 +9,11 @@ weatherApp.config(function($routeProvider) {
             controller: 'homeController'
         })
         .when('/forecast', {
-            templateUrl: 'html/forecast.html',
+            templateUrl: 'app/components/home/forecast.html',
             controller: 'forecastController'
         })
         .when('/forecast/:days', {
-            templateUrl: 'html/forecast.html',
+            templateUrl: 'app/components/home/forecast.html',
             controller: 'forecastController'
         })
 });
