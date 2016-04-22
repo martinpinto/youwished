@@ -3,11 +3,23 @@
 
 <head>
     <title>YouWished</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta charset="UTF-8">
 
-    <!-- load bootstrap and fontawesome via CDN -->
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <!-- material design by creative tim -->
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/images/material/apple-icon.png">
+	<link rel="icon" type="image/png" href="assets/images/material/favicon.png">
+    <!-- material design by creative tim -->
+    <!--     Fonts and icons     -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <!-- material design by creative tim -->
+	<!-- CSS Files -->
+    <link href="assets/stylesheets/material/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/stylesheets/material/material-kit.css" rel="stylesheet"/>
+    
+    <!-- override css styles -->
     <link rel="stylesheet" type="text/css" href="assets/stylesheets/style.css">
     <style>
         html,
@@ -24,6 +36,7 @@
     <script src="https://code.angularjs.org/1.5.0-rc.2/angular-route.min.js"></script>
     <script src="https://code.angularjs.org/1.5.0-rc.2/angular-resource.min.js"></script>
 
+    <!-- custom angularjs app -->
     <script src="app/app-frontend.js"></script>
 </head>
 
@@ -34,7 +47,7 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#/">
-                        <img alt="Brand" src="#" /> YouWished
+                        <img alt="Brand" src="#" />
                     </a>
                 </div>
 
@@ -42,7 +55,7 @@
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Search">
                     </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="submit" class="btn btn-raised btn-default">Submit</button>
                 </form>
 
                 <ul class="nav navbar-nav navbar-right">
@@ -52,7 +65,7 @@
         </nav>
     </header>
 
-    <div class="container">
+    <div class="container-fluid">
 
         <div ng-view></div>
 
