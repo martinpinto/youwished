@@ -1,8 +1,8 @@
 // MAIN MODULE
-var weatherApp = angular.module('youwishedApp', ['ngRoute', 'ngResource']);
+var wishApp = angular.module('youwishedApp', ['ngRoute', 'ngResource']);
 
 // ROUTES
-weatherApp.config(function($routeProvider) {
+wishApp.config(function($routeProvider) {
     $routeProvider
         .when('/', {
             templateUrl: 'app/components/home/home.htm',
@@ -10,31 +10,32 @@ weatherApp.config(function($routeProvider) {
         })
         .when('/forecast', {
             templateUrl: 'app/components/home/forecast.html',
-            controller: 'forecastController'
+            controller: 'wishController'
         })
         .when('/forecast/:days', {
             templateUrl: 'app/components/home/forecast.html',
-            controller: 'forecastController'
+            controller: 'wishController'
         })
 });
 
 // SERVICES
-weatherApp.service('cityService', function() {
+wishApp.service('standardWishService', function() {
     this.city = 'New York, NY';
+    this.sorting = 1; // sorting of 1 indicates a sorting by popularity 
 });
 
 // CONTROLLERS
-weatherApp.controller('homeController', ['$scope', 'cityService', function($scope, cityService) {
-    $scope.city = cityService.city;
+wishApp.controller('homeController', ['$scope', 'standardWishService', function($scope, standardWishService) {
+    $scope.city = standardWishService.city;
     
     $scope.$watch('city', function() {
-        cityService.city = $scope.city;
+        standardWishService.city = $scope.city;
     });
     
 }]);
 
-weatherApp.controller('forecastController', ['$scope', 'cityService', '$resource', '$routeParams', function($scope, cityService, $resource, $routeParams) {
-    $scope.city = cityService.city;
+wishApp.controller('wishController', ['$scope', 'standardWishService', '$resource', '$routeParams', function($scope, standardWishService, $resource, $routeParams) {
+    $scope.city = standardWishService.city;
     
     $scope.days = $routeParams.days || '2'; // default to 2 
     
@@ -49,7 +50,7 @@ weatherApp.controller('forecastController', ['$scope', 'cityService', '$resource
 }]);
 
 // DIRECTIVES
-weatherApp.directive('weatherReport', function() {
+wishApp.directive('weatherReport', function() {
     return {
         restrict: 'E',
         templateUrl: 'html/directives/weatherReport.html',
