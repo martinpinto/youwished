@@ -9,7 +9,7 @@ wishApp.service('standardWishService', function() {
 // CONTROLLERS
 wishApp.controller('homeController', ['$scope', 'standardWishService', function($scope, standardWishService) {
     $scope.city = standardWishService.city;
-    
+
     $scope.$watch('city', function() {
         standardWishService.city = $scope.city;
     });
