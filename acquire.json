@@ -1,8 +1,8 @@
 {
     "app": "src/server/app-backend.js",
     "config": "config/config.js",
-    "elasticsearch": "config/database/elasticsearch.js",
-    "mongodb": "config/database/mongodb.js",
-    "models": "src/server/models/modelsHelper.js",
-    "couchdb": "config/database/couchdb.js"
+    "elasticsearch": "src/server/helpers/database/elasticsearch.js",
+    "mongodb": "src/server/helpers/database/mongodb.js",
+    "models": "src/common/models/modelsHelper.js",
+    "couchdb": "src/server/helpers/database/couchdb.js"
 }

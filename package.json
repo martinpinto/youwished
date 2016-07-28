@@ -1,6 +1,5 @@
 {
   "name": "YouWished",
-  "version": "0.0.2",
   "description": "A minimal stack configuration with AngularJS, CouchDB, ElasticSearch and ExpressJS",
   "author": "Martin Pinto-Bazurco",
   "license": "Apache-2.0",
