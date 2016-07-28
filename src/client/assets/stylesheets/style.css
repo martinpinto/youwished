@@ -82,6 +82,10 @@ h2 {
     border-radius: 0;
   }
 }
+.btn,
+.input-group-btn .btn {
+  padding: 7px;
+}
 /**/
 .footer {
   flex-basis: 100%;
