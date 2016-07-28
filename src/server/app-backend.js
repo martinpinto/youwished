@@ -62,6 +62,6 @@ app.use(function (req, res, next) {
 // error handlers
 app.set('env', config.app.environment);
 
-console.log('Web server listening at: %s', config.api.host + ":" + config.api.port);
+console.log('Web server listening at: %s', config.api.host + ':' + config.api.port);
 // to start app in debug mode use: DEBUG=es_template:* ./bin/www OR nodemon --debug ./bin/www
 module.exports = app;
