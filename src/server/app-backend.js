@@ -16,13 +16,13 @@ var express = require('express'),
 var app = express(); // create the express app
 
 // fetch current API version from configuration
-var currentAPIVersion = config.api_version;
+var currentAPIVersion = config.api.version;
 
 // view engine setup, default to html
-app.set('views', __dirname.replace('/private', '/public'));
+app.set('views', __dirname.replace('/server', '/client'));
 app.set('view engine', 'html');
 
-app.use(favicon(__dirname.replace('/private', '/public') + '/assets/images/favicon.ico'));
+app.use(favicon(__dirname.replace('/server', '/client') + '/assets/images/favicon.ico'));
 app.use(compression()); // compress all requests
 
 app.use(bodyParser.json()); // parse application/json
@@ -36,14 +36,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 // make a public folder for express available
-app.use(express.static(__dirname.replace('/private', '/public')));
+app.use(express.static(__dirname.replace('/server', '/client')));
 
 // activate database and its routes
 var api = require('./routes/api');
 
 // set the API routes in express
-// TODO: use API version in routes
-app.use('/api', api);
+app.use(config.api.root, api);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -61,7 +60,10 @@ app.use(function (req, res, next) {
 });
 
 // error handlers
-app.set('env', config.environment);
+app.set('env', config.app.environment);
 
+// TODO: add bootstrapping capabilities
+
+console.log('Web server listening at: %s', config.api.host + ":" + config.api.port);
 // to start app in debug mode use: DEBUG=es_template:* ./bin/www OR nodemon --debug ./bin/www
 module.exports = app;

@@ -8,14 +8,15 @@ var acquire = require('acquire');
 var app = acquire('app');
 var debug = require('debug')('project_template:server');
 var http = require('http');
+var config = acquire('config');
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || '3000');
-var ip = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
-console.log('Starting server at: ' + ip + ":" + port);
+var port = normalizePort(process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || config.api.port || '3000');
+var ip = process.env.OPENSHIFT_NODEJS_IP || config.api.host || "127.0.0.1";
+
 app.set('port', port);
 app.set('domain', ip);
 

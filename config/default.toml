@@ -1,8 +1,14 @@
 # General configuration for the application
+[app]
 name = "youwished-app"
 version = "0.0.2"
-api_version = 1
 environment = "development" # "development" or "production"
+
+[api]
+version = 1
+root =  "/api"
+host = "localhost"
+port =  3000
 
 # Database configuration
 [database]
