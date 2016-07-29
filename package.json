@@ -8,7 +8,7 @@
     "start": "npm restart && node ./bin/start",
     "serve": "npm restart && nodemon ./bin/start",
     "clean": "rimraf node_modules",
-    "restart": "lessc src/client/assets/stylesheets/style.less src/client/assets/stylesheets/style.css",
+    "restart": "lessc src/client/assets/stylesheets/app.core.less src/client/assets/stylesheets/style.css",
     "test": "karma start --single-run --path--"
   },
   "dependencies": {
