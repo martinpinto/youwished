@@ -1,3 +1,7 @@
+// App Custom Code
+// --------------------------------------------------
+// This is the code which make up the design of the app.
+
 /**
  * CONTENTS
  *
@@ -25,17 +29,20 @@
  * TRUMPS
  * Text.................Text helpers.
  */
+
 /** 
  * GENERIC
  * Normalize.css........A level playing field.
  * Box-sizing...........Better default `box-sizing`.
  */
 body {
-  background-color: #EBEBEB;
+  background-color: @main-background-grey;
 }
+
 a {
-  color: #00B7FF;
+  color: @main-links-blue;
 }
+
 .wrapper {
   display: -webkit-box;
   display: -moz-box;
@@ -46,9 +53,11 @@ a {
   flex-wrap: wrap;
   width: 100%;
 }
+
 .wrapper > .header {
   min-height: 0;
 }
+
 /**
  * BASE
  * Headings.............H1–H6 styles.
@@ -56,103 +65,119 @@ a {
 h2 {
   font-weight: 400;
 }
+
 /**
  * COMPONENTS
  * Page-head............The main page header.
  * Page-foot............The main page footer.
  * Buttons..............Button elements.
  */
+
 .header {
   flex-basis: 100%;
   z-index: 10;
 }
+
 /**
  * COMPONENTS OVERRIDES
  */
 .navbar {
   margin: 0;
   padding: 0;
+
 }
+
 @media (min-width: 768px) {
-  .navbar {
-    border-radius: 0;
-  }
+.navbar {border-radius: 0;}
 }
-.btn,
-.input-group-btn .btn {
+
+.btn, .input-group-btn .btn {
   padding: 7px;
 }
 /**/
+
 .footer {
   flex-basis: 100%;
 }
+
 aside {
   padding-top: 2%;
 }
+
 .main {
   text-align: left;
   flex-basis: 60%;
   padding-top: 2%;
 }
+
 .aside-1 {
   flex-basis: 20%;
-  background: #FFF;
+  background: @white;
 }
+
 .aside-2 {
   flex-basis: 20%;
-  background: #FFF;
+  background: @white;
 }
+
 @media all {
   .aside {
     flex: 1 auto;
   }
 }
+
 @media all {
   .main {
     flex: 5 0px;
   }
+
   .aside-1 {
     order: 1;
   }
+
   .main {
     order: 2;
   }
+
   .aside-2 {
     order: 3;
   }
+
   .footer {
     order: 4;
   }
 }
+
 .main-raised {
-  background: #FFF;
+  background: @white;
 }
+
 .main-padded {
   margin-top: 1%;
   padding: 1%;
-}
+} 
+
 .navbar2 {
   background-color: #582A72;
-  -webkit-box-shadow: 0px 5px 5px -2px #755a75;
-  -moz-box-shadow: 0px 5px 5px -2px #755a75;
-  box-shadow: 0px 5px 5px -2px #755a75;
+  -webkit-box-shadow: 0px 5px 5px -2px rgba(117,90,117,1);
+  -moz-box-shadow: 0px 5px 5px -2px rgba(117,90,117,1);
+  box-shadow: 0px 5px 5px -2px rgba(117,90,117,1);
 }
+
 .user-profile-picture {
   background-image: url(../images/user.jpg);
 }
+
 .user-profile {
-  background-size: 32px 32px;
-  border-radius: 50%;
-  display: block;
-  height: 32px;
-  width: 32px;
+  background-size:32px 32px;
+  border-radius:50%;
+  display:block;
+  height:32px;
+  width:32px;
   margin-top: 10px;
   margin-right: 10px;
 }
+
 .box-shadow {
   box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 2px 0px rgba(0, 0, 0, 0.24);
 }
-/**
- * SETTINGS
- * Global...............Globally-available variables and config.
- */
